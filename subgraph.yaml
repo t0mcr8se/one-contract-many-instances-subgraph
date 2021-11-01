@@ -1,0 +1,44 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: POC2
+    network: rinkeby
+    source:
+      address: "0xD50F1ff36FA56f8340b8Cb77A4fcaF1759dacB39"
+      abi: POC
+      startBlock: 9568076 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Thanks
+      abis:
+        - name: POC
+          file: ./abis/POC.json
+      eventHandlers:
+        - event: Thanks(address,uint256)
+          handler: handleThanks
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: POC1
+    network: rinkeby
+    source:
+      address: "0xd8a9585fd631B97F8C3c6443fB358769884CE87f"
+      abi: POC
+      startBlock: 9568070
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Thanks
+      abis:
+        - name: POC
+          file: ./abis/POC.json
+      eventHandlers:
+        - event: Thanks(address,uint256)
+          handler: handleThanks
+      file: ./src/mapping.ts

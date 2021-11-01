@@ -1,0 +1,6 @@
+type Received @entity {
+  id: ID! # string: txHash
+  receiver: Bytes! # address: wallet that received funds
+  sender: Bytes! # address: wallet that sent funds
+  amount: BigInt! # uint256
+}
