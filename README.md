@@ -18,6 +18,13 @@ contract POC{
 }
 ```
 
+## Vision:
+We basically need to write a script to automate the following workflow:
+- Listen for the deployment of new contracts of type POC.sol
+- Add contract address and startBlock (and other data.. same for every instance) to [subgraph.yaml](./subgraph.yaml)
+- Run `yarn deploy`
+
+
 ## Instances:
 - [0xd8a9585fd631b97f8c3c6443fb358769884ce87f](https://rinkeby.etherscan.io/address/0xd8a9585fd631b97f8c3c6443fb358769884ce87f)
 - [0xd50f1ff36fa56f8340b8cb77a4fcaf1759dacb39](https://rinkeby.etherscan.io/address/0xd50f1ff36fa56f8340b8cb77a4fcaf1759dacb39)
